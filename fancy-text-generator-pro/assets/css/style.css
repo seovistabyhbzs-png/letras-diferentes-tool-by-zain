@@ -1,56 +1,107 @@
 /**
- * Fancy Text Generator Pro - Styles
- * Clean, simple design matching the reference image
+ * Conversor de Letras - Estilos (como conversorsdeletras.com)
+ * Diseño limpio, profesional y en español
  */
 
-/* Container */
-.ftgp-container {
-    max-width: 800px;
+.ftgp-conversor {
+    max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #ffffff;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Input Wrapper */
+/* Header */
+.ftgp-header {
+    margin-bottom: 2rem;
+}
+
+.ftgp-titulo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 1rem 0;
+    line-height: 1.3;
+}
+
+.ftgp-descripcion {
+    font-size: 1rem;
+    color: #444;
+    margin: 0;
+}
+
+.ftgp-descripcion strong {
+    color: #1a1a1a;
+}
+
+/* Instructions */
+.ftgp-instructions {
+    margin-bottom: 2rem;
+    padding: 1.25rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #0066cc;
+}
+
+.ftgp-subtitulo {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 0.75rem 0;
+}
+
+.ftgp-pasos {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #444;
+}
+
+.ftgp-pasos li {
+    margin-bottom: 0.5rem;
+}
+
+/* Tool area */
+.ftgp-tool {
+    margin-top: 2rem;
+}
+
 .ftgp-input-wrapper {
-    position: relative;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.ftgp-input-icon {
-    flex-shrink: 0;
-    font-size: 1.2rem;
-    pointer-events: none;
+    margin-bottom: 0.75rem;
 }
 
 .ftgp-input {
-    flex: 1;
-    padding: 12px;
+    width: 100%;
+    padding: 14px 16px;
     font-size: 1rem;
     font-family: inherit;
-    border: 2px solid #ff6b6b;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    background: #ffffff;
+    background: #fff;
     color: #333;
-    transition: all 0.2s ease;
+    resize: vertical;
+    transition: border-color 0.2s, box-shadow 0.2s;
     box-sizing: border-box;
 }
 
 .ftgp-input:focus {
     outline: none;
-    border-color: #ff5252;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
 }
 
 .ftgp-input::placeholder {
-    color: #999;
+    color: #888;
 }
 
-/* Results */
+.ftgp-hint {
+    font-size: 0.9375rem;
+    color: #666;
+    margin: 0 0 1.25rem 0;
+}
+
+/* Results - cards clickeables como conversorsdeletras.com */
 .ftgp-results {
     display: flex;
     flex-direction: column;
@@ -58,182 +109,156 @@
 }
 
 .ftgp-result-card {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.25rem;
-    background: #ffffff;
-    border: 2px solid #ffcccc;
+    background: #fff;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
-    transition: all 0.2s ease;
-    min-height: 60px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    min-height: 56px;
 }
 
 .ftgp-result-card:hover {
-    border-color: #ff9999;
-    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.1);
+    border-color: #0066cc;
+    background: #f8fbff;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.08);
 }
 
-.ftgp-result-card.active {
-    border-color: #cc6666;
+.ftgp-result-card:active {
+    background: #eef5fc;
 }
 
 .ftgp-result-text {
     flex: 1;
     font-size: 1.25rem;
     font-weight: 500;
-    color: #ff6b6b;
+    color: #1a1a1a;
     word-break: break-word;
     line-height: 1.5;
     padding-right: 1rem;
-    text-align: center;
+    text-align: left;
 }
 
-.ftgp-copy-btn {
+.ftgp-result-card .ftgp-copy-icon {
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    font-size: 1.2rem;
-    background: transparent;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ff6b6b;
+    font-size: 1.125rem;
+    color: #666;
+    background: #f0f0f0;
+    border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
 }
 
-.ftgp-copy-btn:hover {
-    background: #fff5f5;
-    transform: scale(1.1);
+.ftgp-result-card:hover .ftgp-copy-icon {
+    color: #0066cc;
+    background: #e8f2fc;
 }
 
-.ftgp-copy-btn:active {
-    transform: scale(0.95);
-}
-
-.ftgp-copy-btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
-}
-
-/* Load More */
+/* Load More - como en la web de referencia */
 .ftgp-load-more-wrapper {
     text-align: center;
     margin-top: 2rem;
 }
 
-.ftgp-load-more-btn {
-    padding: 0.75rem 2rem;
+.ftgp-btn-cargar {
+    padding: 12px 28px;
     font-size: 1rem;
     font-weight: 600;
-    background: #ff6b6b;
-    color: white;
+    color: #fff;
+    background: #0066cc;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background 0.2s, transform 0.2s;
 }
 
-.ftgp-load-more-btn:hover {
-    background: #ff5252;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+.ftgp-btn-cargar:hover {
+    background: #0052a3;
+    transform: translateY(-1px);
 }
 
-.ftgp-load-more-btn:focus {
+.ftgp-btn-cargar:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3);
 }
 
-/* Toast Notification */
+/* Toast */
 .ftgp-toast {
     position: fixed;
-    bottom: 2rem;
+    bottom: 24px;
     left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    padding: 1rem 1.5rem;
-    background: #4caf50;
-    color: white;
+    transform: translateX(-50%) translateY(80px);
+    padding: 14px 24px;
+    background: #2e7d32;
+    color: #fff;
     border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     z-index: 10000;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     pointer-events: none;
     max-width: 90%;
     text-align: center;
     font-weight: 500;
 }
 
-.ftgp-toast-show {
+.ftgp-toast.ftgp-toast-show {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-    .ftgp-container {
+    .ftgp-conversor {
         padding: 1.5rem 1rem;
     }
-    
+    .ftgp-titulo {
+        font-size: 1.5rem;
+    }
     .ftgp-result-text {
         font-size: 1.125rem;
     }
-    
     .ftgp-result-card {
         padding: 0.875rem 1rem;
-        min-height: 50px;
+        min-height: 52px;
     }
-    
     .ftgp-toast {
-        bottom: 1rem;
-        left: 1rem;
-        right: 1rem;
-        transform: translateY(100px);
-        max-width: calc(100% - 2rem);
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        transform: translateY(80px);
+        max-width: none;
     }
-    
-    .ftgp-toast-show {
+    .ftgp-toast.ftgp-toast-show {
         transform: translateY(0);
     }
 }
 
 @media (max-width: 480px) {
     .ftgp-result-card {
-        padding: 0.75rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+        flex-wrap: wrap;
     }
-    
     .ftgp-result-text {
-        padding-right: 0;
         width: 100%;
+        padding-right: 0;
+        padding-bottom: 0.5rem;
     }
-    
-    .ftgp-copy-btn {
+    .ftgp-result-card .ftgp-copy-icon {
         align-self: flex-end;
     }
 }
 
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* Focus visible for keyboard navigation */
+/* Accesibilidad */
 .ftgp-input:focus-visible,
-.ftgp-copy-btn:focus-visible,
-.ftgp-load-more-btn:focus-visible {
-    outline: 2px solid #ff6b6b;
+.ftgp-result-card:focus-visible,
+.ftgp-btn-cargar:focus-visible {
+    outline: 2px solid #0066cc;
     outline-offset: 2px;
 }
